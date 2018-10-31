@@ -1,0 +1,11 @@
+{{> header}}
+
+<h1>Profil de {{ user.pseudo }}</h1>
+
+<h2>Articles</h2>
+
+{{ #articles}}
+    <a href="/show/{{ slug }}">{{ title }}</a>
+{{ /articles }}
+
+{{> footer}}

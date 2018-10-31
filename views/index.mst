@@ -1,0 +1,29 @@
+{{> header}}
+
+
+<h1>Accueil</h1>
+
+{{ #success }}
+    <p>{{ success }}</p>
+{{ /success }}
+
+<div id="app">
+    {{=<% %>=}}
+        {{ message }}
+    <%={{ }}=%>
+    
+</div>
+
+<h2>Derniers articles</h2>
+
+{{ #articles}}
+    <a href="/show/{{ slug }}">{{ title }}</a>
+{{ /articles }}
+
+<h3>Utilisateurs</h3>
+
+{{ #users}}
+    <a href="/users/profile/{{ pseudo }}">{{ pseudo }}</a>
+{{ /users }}
+
+{{> footer}}

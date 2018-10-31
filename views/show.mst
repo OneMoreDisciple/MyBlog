@@ -1,0 +1,24 @@
+{{> header}}
+
+{{ #success }}
+    <p>{{ success }}</p>
+{{ /success }}
+
+<h1>{{ article.title }}</h1>
+<p>{{ article.content }}<br /><br />
+Écrit par <a href="/users/profile/{{ article.author }}">{{ article.author }}</a> le {{ created_at }}<br />
+{{ #updated_at }} Modifié le {{ updated_at }} {{ /updated_at }}</p>
+
+{{ #isAuthor }}
+<form method="post" action="/delete/{{ article.slug }}">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <input type="submit" name="submit" value="Supprimer" />
+</form>
+<a href="/edit/{{ article.slug }}">Éditer</a>
+{{ /isAuthor }}
+
+
+
+
+
+{{> footer}}
